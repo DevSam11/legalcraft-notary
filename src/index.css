@@ -1,0 +1,644 @@
+/* src/index.css */
+
+/* Basic Reset and Font Styling */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6; /* Slightly increased for better readability */
+  color: #333;
+  background-color: #f8f8f8; /* Very light grey for background */
+}
+
+/* Headings Styling */
+h1, h2, h3, h4, h5, h6 {
+    color: #444; /* Darker grey for headings */
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    font-weight: 600;
+    text-align: center; /* Center align all main headings for consistency */
+}
+
+/* Paragraph and List Styling */
+p {
+    margin-bottom: 1em;
+    text-align: left; /* Default to left-align for better readability */
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+/* Section General Styling */
+section {
+    padding: 60px 30px; /* Increased horizontal padding for sections */
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for sections */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Lighter shadow */
+    margin-bottom: 25px;
+    border-radius: 8px; /* Slightly less rounded */
+}
+
+/* Header/Navbar Styling */
+.header {
+    background-color: #ffffff; /* White header */
+    padding: 15px 30px; /* Increased horizontal padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+.header .logo {
+    /* No font styles here, as it's now an image container */
+    display: flex; /* Use flex to center the image if needed */
+    align-items: center;
+}
+
+.header-logo { /* New class for the logo image */
+    height: 30px; /* Reduced height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Apply rounded corners if desired */
+    /* You can add more styling here if needed, e.g., max-width, margin */
+}
+
+
+/* Desktop Navigation */
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Always flex for desktop */
+    align-items: center;
+}
+
+.header nav ul li {
+    margin-left: 30px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: #0056b3;
+}
+
+.header .cta-button {
+    background-color: #0056b3;
+    color: white;
+    padding: 6px 12px; /* Further reduced padding */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8em; /* Further reduced font size */
+    transition: background-color 0.3s ease;
+}
+
+.header .cta-button:hover {
+    background-color: #004085;
+}
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 1001; /* Ensure it's above the nav when open */
+}
+
+.hamburger-menu div {
+    width: 100%;
+    height: 3px;
+    background-color: #666;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
+}
+
+/* Hamburger animation for open state */
+.hamburger-menu.open div:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger-menu.open div:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.hamburger-menu.open div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+/* Hero Section Specific Styling */
+.hero {
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    padding: 100px 30px; /* Increased horizontal padding */
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    color: #444;
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.3em;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    text-align: center; /* Hero paragraphs remain center-aligned */
+}
+
+.hero .tagline {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    color: #666;
+}
+
+.hero .notary-highlight {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Section Specific Styling (general) */
+.notary-details h3 {
+    color: #0056b3;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-align: left; /* Sub-headings within sections are left-aligned */
+}
+
+.notary-details ul {
+    list-style-type: none; /* Changed to none for custom bullets */
+    padding: 0;
+}
+
+.notary-details ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px;
+    font-size: 1.05em;
+    text-align: left; /* Left-align list items for better readability */
+}
+
+.notary-details ul li::before {
+    content: '✓';
+    color: #28a745;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.2;
+}
+
+/* CTA Button within sections (not header) */
+.section-cta-button {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 8px 16px; /* Further reduced padding */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em; /* Further reduced font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 30px;
+}
+
+.section-cta-button:hover {
+    background-color: #004085;
+    transform: translateY(-2px);
+}
+
+.section-cta-button.secondary-cta {
+    background-color: #f0f0f0; /* Light grey background for secondary CTAs */
+    color: #0056b3; /* Blue text color */
+    border: 1px solid #0056b3; /* Blue border */
+    margin-left: 10px; /* Space from primary CTA */
+    padding: 6px 12px; /* Further reduced padding for secondary CTAs */
+    font-size: 0.8em; /* Further reduced font size for secondary CTAs */
+}
+
+.section-cta-button.secondary-cta:hover {
+    background-color: #e0e0e0; /* Darker grey on hover */
+    color: #004085;
+    transform: translateY(-2px);
+}
+
+
+/* Services Grid and Cards */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+    gap: 25px; /* Space between cards */
+    margin-top: 30px;
+}
+
+.service-category-card {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e0e0e0; /* Light grey border */
+    border-radius: 10px; /* Curved border */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06); /* Light shadow */
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    display: flex; /* Use flex to align content within the card */
+    flex-direction: column;
+    justify-content: space-between; /* Push content to top/bottom */
+}
+
+.service-category-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1); /* Slightly stronger shadow on hover */
+}
+
+.service-category-card h3 {
+    color: #0056b3; /* Blue for service category titles */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-align: left; /* Align card titles to left */
+}
+
+.service-category-card h4 { /* Styling for the sub-title in service cards */
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-align: left; /* Align card subtitles to left */
+}
+
+.service-category-card p {
+    text-align: left; /* Left-align paragraphs within cards */
+}
+
+.service-category-card ul {
+    list-style-type: none; /* No default bullets */
+    padding-left: 0;
+    margin-bottom: 0; /* Remove default margin */
+}
+
+.service-category-card ul li {
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+    text-align: left; /* Left-align list items within cards */
+}
+
+.service-category-card ul li::before {
+    content: '•'; /* Custom bullet point */
+    color: #888; /* Grey bullet */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.cta-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+    justify-content: center; /* Center buttons within the card */
+}
+
+.section-description {
+    text-align: center; /* Description remains center-aligned */
+    font-size: 1.15em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #555;
+}
+
+
+/* Contact Info Section Styling */
+.contact-info {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 50px 30px; /* Increased horizontal padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: center; /* Contact info paragraphs remain center-aligned */
+}
+
+.contact-info a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #004085;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto 30px auto; /* Center form and add space below */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Slightly more prominent shadow for form */
+    text-align: left; /* Align form elements to the left */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fcfcfc; /* Slightly off-white input background */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0056b3; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2); /* Light blue glow on focus */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.submit-button {
+    display: block; /* Make button full width of its container */
+    width: 100%;
+    padding: 10px 20px; /* Further reduced padding */
+    background-color: #0056b3; /* Primary blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em; /* Further reduced font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #004085;
+    transform: translateY(-2px);
+}
+
+.or-contact-directly {
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+    text-align: center; /* Keep this centered */
+}
+
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #444;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.footer a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .header {
+        padding: 10px 20px; /* Increased horizontal padding for the header itself */
+    }
+
+    .header nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.98); /* Semi-transparent white overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .header nav.nav-open {
+        transform: translateX(0);
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header nav ul li {
+        margin: 15px 0;
+    }
+
+    .header nav ul li a {
+        font-size: 1.1em; /* Further reduced font size for mobile nav links */
+        color: #444;
+    }
+
+    .header .cta-button {
+        margin-top: 20px;
+        font-size: 0.8em; /* Further reduced font size for mobile CTA in nav */
+        padding: 6px 12px; /* Further reduced padding for mobile CTA in nav */
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Adjust hero and general section padding for smaller screens */
+    .hero {
+        padding: 40px 25px; /* Increased padding on all sides for mobile hero */
+    }
+    .hero h1 {
+        font-size: 1.8em; /* Further reduced font size for hero title */
+    }
+    .hero p {
+        font-size: 0.85em; /* Further reduced font size for hero paragraph */
+        text-align: center; /* Keep hero paragraphs centered on mobile */
+    }
+    .hero .tagline {
+        font-size: 0.9em; /* Further reduced font size for tagline */
+    }
+    .hero .notary-highlight {
+        font-size: 0.8em; /* Further reduced font size for notary highlight */
+        padding: 6px 12px; /* Adjusted padding for highlight */
+    }
+
+    section {
+        padding: 25px 25px; /* Increased padding on all sides for general sections */
+    }
+    h2 {
+        font-size: 1.5em; /* Further reduced font size for section titles */
+    }
+    h3 {
+        font-size: 1em; /* Further reduced font size for sub-titles */
+        text-align: left; /* Keep sub-headings left-aligned on mobile */
+    }
+
+    .section-description {
+        font-size: 0.9em; /* Further reduced font size for section description */
+        text-align: left; /* Left-align description on mobile for better flow */
+    }
+
+    .section-cta-button {
+        padding: 6px 12px; /* Further reduced padding for section CTA */
+        font-size: 0.8em; /* Further reduced font size for section CTA */
+    }
+
+    .section-cta-button.secondary-cta {
+        padding: 5px 10px; /* Smaller padding for secondary CTAs on mobile */
+        font-size: 0.75em; /* Smaller font size for secondary CTAs on mobile */
+    }
+
+    .notary-details ul li {
+        font-size: 0.85em; /* Further reduced font size for notary list items */
+        text-align: left; /* Left-align list items on mobile */
+    }
+    .contact-info p {
+        font-size: 0.9em; /* Further reduced font size for contact info paragraphs */
+        text-align: center; /* Keep contact info paragraphs centered on mobile */
+    }
+
+    .contact-form {
+        padding: 15px; /* Reduced padding for form */
+    }
+
+    .form-group label {
+        font-size: 0.85em; /* Further reduced font size for form labels */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group textarea {
+        width: calc(100% - 16px); /* Adjusted width for new padding */
+        padding: 6px 8px; /* Further reduced padding for form inputs */
+        font-size: 0.85em; /* Further reduced font size for form inputs */
+    }
+
+    .submit-button {
+        padding: 8px 16px; /* Further reduced padding for submit button */
+        font-size: 0.9em; /* Further reduced font size for submit button */
+    }
+
+    /* Services grid on small screens */
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack cards on very small screens */
+        gap: 15px;
+    }
+
+    .service-category-card {
+        padding: 15px; /* Further reduced padding for service cards */
+    }
+
+    .service-category-card h3 {
+        font-size: 1em; /* Further reduced font size for service card titles */
+        text-align: left; /* Align card titles to left on mobile */
+    }
+
+    .service-category-card h4 {
+        font-size: 0.9em; /* Further reduced font size for service card subtitles */
+        text-align: left; /* Align card subtitles to left on mobile */
+    }
+
+    .service-category-card ul li {
+        font-size: 0.8em; /* Further reduced font size for service card list items */
+        text-align: left; /* Left-align list items within cards on mobile */
+    }
+    .cta-group {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        gap: 8px; /* Reduced gap between stacked buttons */
+    }
+    .section-cta-button, .section-cta-button.secondary-cta {
+        width: 100%; /* Make buttons full width in mobile CTA group */
+        text-align: center;
+    }
+}
+
+/* Medium screens for services grid */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
